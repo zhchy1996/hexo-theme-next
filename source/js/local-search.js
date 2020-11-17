@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(res => {
         // Get the contents from search data
         isfetched = true;
-        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
+        datas = isXml ? [...new DOMParser().parseFromString(res, 'text/html').querySelectorAll('entry')].map(element => {
           return {
             title  : element.querySelector('title').textContent,
             content: element.querySelector('content').textContent,
